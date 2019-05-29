@@ -2,7 +2,7 @@
   "name": "substitution-cipher",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jesseez.github.io/SubstitionCipher/",
+  "homepage": "https://jesseez.github.io/SubstitutionCipher/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
