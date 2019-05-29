@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/SubstitionCipher/static/css/main.2cce8147.chunk.css",
-    "main.js": "/SubstitionCipher/static/js/main.ef7c205c.chunk.js",
-    "main.js.map": "/SubstitionCipher/static/js/main.ef7c205c.chunk.js.map",
-    "runtime~main.js": "/SubstitionCipher/static/js/runtime~main.524c5d72.js",
-    "runtime~main.js.map": "/SubstitionCipher/static/js/runtime~main.524c5d72.js.map",
-    "static/js/2.b41502e9.chunk.js": "/SubstitionCipher/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/SubstitionCipher/static/js/2.b41502e9.chunk.js.map",
-    "index.html": "/SubstitionCipher/index.html",
-    "precache-manifest.b366e98a4aee3bdb23bc617fdf69d64f.js": "/SubstitionCipher/precache-manifest.b366e98a4aee3bdb23bc617fdf69d64f.js",
-    "service-worker.js": "/SubstitionCipher/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/SubstitionCipher/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/SubstitionCipher/static/media/logo.5d5d9eef.svg"
+    "main.css": "/SubstitutionCipher/static/css/main.2cce8147.chunk.css",
+    "main.js": "/SubstitutionCipher/static/js/main.e94f9c40.chunk.js",
+    "main.js.map": "/SubstitutionCipher/static/js/main.e94f9c40.chunk.js.map",
+    "runtime~main.js": "/SubstitutionCipher/static/js/runtime~main.38c44265.js",
+    "runtime~main.js.map": "/SubstitutionCipher/static/js/runtime~main.38c44265.js.map",
+    "static/js/2.b41502e9.chunk.js": "/SubstitutionCipher/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/SubstitutionCipher/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/SubstitutionCipher/index.html",
+    "precache-manifest.0a0adf05e79a1c35bf9d27d1165b7dbb.js": "/SubstitutionCipher/precache-manifest.0a0adf05e79a1c35bf9d27d1165b7dbb.js",
+    "service-worker.js": "/SubstitutionCipher/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/SubstitutionCipher/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/SubstitutionCipher/static/media/logo.5d5d9eef.svg"
   }
 }
