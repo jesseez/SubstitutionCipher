@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/SubstitutionCipher/static/css/main.2cce8147.chunk.css",
-    "main.js": "/SubstitutionCipher/static/js/main.e94f9c40.chunk.js",
-    "main.js.map": "/SubstitutionCipher/static/js/main.e94f9c40.chunk.js.map",
-    "runtime~main.js": "/SubstitutionCipher/static/js/runtime~main.38c44265.js",
-    "runtime~main.js.map": "/SubstitutionCipher/static/js/runtime~main.38c44265.js.map",
-    "static/js/2.b41502e9.chunk.js": "/SubstitutionCipher/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/SubstitutionCipher/static/js/2.b41502e9.chunk.js.map",
+    "main.css": "/SubstitutionCipher/static/css/main.a81a1a36.chunk.css",
+    "main.js": "/SubstitutionCipher/static/js/main.63103f38.chunk.js",
+    "main.js.map": "/SubstitutionCipher/static/js/main.63103f38.chunk.js.map",
+    "runtime-main.js": "/SubstitutionCipher/static/js/runtime-main.23334ef4.js",
+    "runtime-main.js.map": "/SubstitutionCipher/static/js/runtime-main.23334ef4.js.map",
+    "static/js/2.f0499618.chunk.js": "/SubstitutionCipher/static/js/2.f0499618.chunk.js",
+    "static/js/2.f0499618.chunk.js.map": "/SubstitutionCipher/static/js/2.f0499618.chunk.js.map",
     "index.html": "/SubstitutionCipher/index.html",
-    "precache-manifest.0a0adf05e79a1c35bf9d27d1165b7dbb.js": "/SubstitutionCipher/precache-manifest.0a0adf05e79a1c35bf9d27d1165b7dbb.js",
+    "precache-manifest.92f379a3a5d8a2c27714d4aa19f6efae.js": "/SubstitutionCipher/precache-manifest.92f379a3a5d8a2c27714d4aa19f6efae.js",
     "service-worker.js": "/SubstitutionCipher/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/SubstitutionCipher/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/SubstitutionCipher/static/media/logo.5d5d9eef.svg"
-  }
+    "static/css/main.a81a1a36.chunk.css.map": "/SubstitutionCipher/static/css/main.a81a1a36.chunk.css.map",
+    "static/js/2.f0499618.chunk.js.LICENSE.txt": "/SubstitutionCipher/static/js/2.f0499618.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23334ef4.js",
+    "static/js/2.f0499618.chunk.js",
+    "static/css/main.a81a1a36.chunk.css",
+    "static/js/main.63103f38.chunk.js"
+  ]
 }
