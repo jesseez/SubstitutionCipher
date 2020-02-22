@@ -120,7 +120,7 @@ export default class Decrypt extends Component {
 
     render() {
         const width = this.state.width <= 500 ? styles.mobileWidth : styles.desktopWidth;
-        const distinctLetters = [...new Set(this.state.encryptedText.toLowerCase())];
+        const distinctLetters = [...new Set(this.state.encryptedText.toLowerCase())].filter(stringUtils.isLetter);
         const isSolved = distinctLetters.length > 0 && distinctLetters.length === Object.values(this.state.letterMap).length;
 
         return (
