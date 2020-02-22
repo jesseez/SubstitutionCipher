@@ -4,15 +4,15 @@
 
 .App-header {
   background-color: #2E0219;
-  min-height: 8vh;
-  max-height: 12vh;
+  min-height: 60px;
+  max-height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   font-size: calc(6px + 1.2vmin);
   color: white;
-  padding-left: 4vh;
+  padding-left: 2vh;
   border-bottom: 0.5vh #620235 solid;
   text-align: start;
 }
@@ -20,7 +20,7 @@
 .App-title {
   text-decoration: none;
   color: white;
-  padding-right: 64px;
+  padding-right: 2vh;
 }
 
 .App-nav-option {
@@ -34,7 +34,7 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  padding-right: 4vh;
+  padding-right: 2vh;
   color: #898989;
 }
 

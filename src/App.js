@@ -1,9 +1,7 @@
 import React from "react";
 import { HashRouter, Route, Link } from 'react-router-dom';
 import "./App.css";
-import { Provider } from "react-redux";
 import { createMuiTheme } from '@material-ui/core/styles';
-import store from "./redux/store";
 import Home from './components/Home';
 import Encrypt from './components/encrypt/Encrypt';
 import Decrypt from './components/decrypt/Decrypt';
@@ -13,44 +11,42 @@ import ThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
 function App() {
     return (
-        <Provider store={store}>
-            <HashRouter basename="/">
-                <ThemeProvider theme={theme}>
-                    <div className="App">
-                        <header className="App-header">
-                            <div>
-                                <Link to="/" className="App-title">
-                                    <span>Substitution Cipher - crack a message</span>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link to="/" className="App-nav-option">
-                                    <span>Home</span>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link to="/encrypt" className="App-nav-option">
-                                    <span>Encrypt</span>
-                                </Link>
-                            </div>
-                            <div>
-                                <Link to="/decrypt" className="App-nav-option">
-                                    <span>Decrypt</span>
-                                </Link>
-                            </div>
-                            <div className="my-name">
-                                <span>Jessee Zhang</span>
-                            </div>
-                        </header>
-                        <div className="App-body">
-                            <Route exact path="/" component={Home} />
-                            <Route path="/encrypt" component={Encrypt} />
-                            <Route path="/decrypt" component={Decrypt} />
+        <HashRouter basename="/">
+            <ThemeProvider theme={theme}>
+                <div className="App">
+                    <header className="App-header">
+                        <div>
+                            <Link to="/" className="App-title">
+                                <span>Substitution Cipher</span>
+                            </Link>
                         </div>
+                        <div>
+                            <Link to="/" className="App-nav-option">
+                                <span>Home</span>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link to="/encrypt" className="App-nav-option">
+                                <span>Encrypt</span>
+                            </Link>
+                        </div>
+                        <div>
+                            <Link to="/decrypt" className="App-nav-option">
+                                <span>Decrypt</span>
+                            </Link>
+                        </div>
+                        <div className="my-name">
+                            <span>Jessee Zhang</span>
+                        </div>
+                    </header>
+                    <div className="App-body">
+                        <Route exact path="/" component={Home} />
+                        <Route path="/encrypt" component={Encrypt} />
+                        <Route path="/decrypt" component={Decrypt} />
                     </div>
-                </ThemeProvider>
-            </HashRouter>
-        </Provider>
+                </div>
+            </ThemeProvider>
+        </HashRouter>
     );
 }
 
