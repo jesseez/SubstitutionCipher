@@ -11,6 +11,14 @@ function getLetterCount(str) {
     return letters;
 }
 
+function isLetter(string) {
+    if(string && string.length > 0) {
+        return alphabet.includes(string[0]);
+    }
+    return false;
+}
+
 module.exports = {
-    getLetterCount
+    getLetterCount,
+    isLetter
 }

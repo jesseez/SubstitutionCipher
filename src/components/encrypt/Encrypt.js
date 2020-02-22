@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextField, Button, FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Snackbar } from "@material-ui/core";
 import encryptionUtils from "../../utils/encryptionUtils";
 import stringUtils from "../../utils/stringUtils";
 
@@ -10,13 +10,15 @@ export default class Encrypt extends Component {
         shiftHalf: { name: 'Split Shift', strategy: encryptionUtils.shiftHalf, description: '"Okay this is pretty hard."' },
         random: { name: 'Random', strategy: encryptionUtils.randomize, description: '"Wtf??"' }
     };
-    
+    tooShortMessage = "Note: messages that are too short tend to be too hard to solve. For best results, type longer messages.";
+
     constructor() {
         super();
         this.state = {
             originalText: '',
             width: window.innerWidth,
-            selectedEncryption: this.encryptionTypes.shift
+            selectedEncryption: this.encryptionTypes.shift,
+            snackbarOpen: false
         };
     }
 
@@ -47,6 +49,15 @@ export default class Encrypt extends Component {
         this.setState({ encryptedText });
     }
 
+    onSnackbarClose() {
+        this.setState({ snackbarOpen: false });
+    }
+
+    onCopy() {
+        navigator.clipboard.writeText(this.state.encryptedText)
+        this.setState({ snackbarOpen: true });
+    }
+    
     render() {
         const isEmpty = !this.state.originalText || 0 === this.state.originalText.length; 
         const isShort = stringUtils.getLetterCount(this.state.originalText) < this.shortLetterCount;
@@ -62,7 +73,7 @@ export default class Encrypt extends Component {
                     multiline 
                     rows="10" 
                     autoFocus={true} 
-                    placeholder="paste yer stuff here" 
+                    placeholder="Enter your message here" 
                     variant="outlined" 
                     onChange={this.onUpdateText.bind(this)}/>
 
@@ -94,7 +105,7 @@ export default class Encrypt extends Component {
                     <div style={{...styles.results, ...width}}>
                         <div style={styles.errorContainer}>
                             {
-                                isShort && <div><span>Note: messages that are too short tend to be too hard to solve.</span></div>
+                                isShort && <div><span>{this.tooShortMessage}</span></div>
                             }
                         </div>
                         <div style={styles.encryptedContainer}>
@@ -102,8 +113,22 @@ export default class Encrypt extends Component {
                                 <span>{this.state.encryptedText}</span>
                             </div>
                         </div>
+                        <Button 
+                            variant='contained' 
+                            color='primary' 
+                            onClick={this.onCopy.bind(this)}
+                        >
+                            Copy
+                        </Button>
                     </div>
                 }
+                <Snackbar
+                    anchorOrigin={styles.snackbar}
+                    open={this.state.snackbarOpen}
+                    onClose={this.onSnackbarClose.bind(this)}
+                    message='Copied!'
+                    autoHideDuration={2000}
+                />
             </div>
         );
     }
@@ -158,7 +183,9 @@ const styles = {
         textAlign: 'start',
     },
     encryptedText: {
+        marginBottom: '8px',
         backgroundColor: '#eff0f1',
-        padding: '8px'
+        padding: '8px',
+        paddingLeft: '16px'
     }
 }
