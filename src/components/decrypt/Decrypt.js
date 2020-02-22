@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TextField, Button, Snackbar  } from "@material-ui/core";
+import { TextField, Button, Snackbar } from "@material-ui/core";
 import stringUtils from "../../utils/stringUtils";
 
 export default class Decrypt extends Component {
@@ -76,7 +76,7 @@ export default class Decrypt extends Component {
                     inputProps={styles.letterInputInputProps}
                     InputLabelProps={styles.letterInputLabelProps}
                     onChange={this.getOnLetterChange(letter).bind(this)}
-                ></TextField>;
+                />;
     }
 
     getOnLetterChange(letter) {
@@ -120,6 +120,8 @@ export default class Decrypt extends Component {
 
     render() {
         const width = this.state.width <= 500 ? styles.mobileWidth : styles.desktopWidth;
+        const inputWidth = width.input;
+        const decryptWidth = width.decrypt;
         const distinctLetters = [...new Set(this.state.encryptedText.toLowerCase())].filter(stringUtils.isLetter);
         const isSolved = distinctLetters.length > 0 && distinctLetters.length === Object.values(this.state.letterMap).length;
 
@@ -129,7 +131,7 @@ export default class Decrypt extends Component {
                     <span>Decrypt a message</span>
                 </div>
                 <TextField 
-                    style={width} 
+                    style={inputWidth} 
                     multiline 
                     rows="10" 
                     autoFocus={true} 
@@ -137,14 +139,16 @@ export default class Decrypt extends Component {
                     variant="outlined" 
                     onChange={this.onUpdateEncryptedText.bind(this)}/>
 
-                <div style={{...styles.decryptContainer, ...width}}>
+                <div style={{...styles.decryptContainer, ...decryptWidth}}>
                     <div>
                         {this.renderText(this.state.encryptedText)}
                     </div>
+                </div>
+                <div style={{...styles.decryptedMessage, ...inputWidth}}>
                     { isSolved &&
                         <div>
                             <div><span>Your decrypted message:</span></div>
-                            <div style={styles.decryptedContainer}>
+                            <div style={styles.decryptedTextContainer}>
                                 <div style={styles.decryptedText}>
                                     {this.translateMessage()}
                                 </div>
@@ -158,7 +162,7 @@ export default class Decrypt extends Component {
                             </Button>
                         </div>
                     }
-                </div>
+                    </div>
                 <Snackbar
                     anchorOrigin={styles.snackbar}
                     open={this.state.snackbarOpen}
@@ -173,10 +177,20 @@ export default class Decrypt extends Component {
 
 const styles = {
     desktopWidth: {
-        width:'50vw'
+        input: {
+            width:'50vw'
+        },
+        decrypt: {
+            width:'65vw'
+        }
     },
     mobileWidth: {
-        width:'75vw'
+        input: {
+            width:'75vw'
+        },
+        decrypt: {
+            width:'85vw'
+        }
     },
     input: {
         maxHeight: '50vh'
@@ -205,23 +219,28 @@ const styles = {
     },
     word: {
         flex: 'none',
-        padding: '16px'
+        padding: '16px',
+        paddingLeft: '0px',
+        paddingRight: '16px'
     },
     symbol: {
         display: 'inline-flex',
         alignItems: 'center',
         height: '100%',
-        paddingLeft: '8px',
-        paddingRight: '8px',
-        fontSize: '24px'
+        paddingLeft: '4px',
+        paddingRight: '4px',
+        fontSize: '20px'
     },
     decryptContainer: {
         display: 'inline-block',
         paddingBottom: '32px',
-        paddingTop: '32px'
+        paddingTop: '32px',
+        overflowX: 'auto',
+        marginTop: '32px',
+        marginBottom: '32px'
     },
-    decryptedContainer: {
-        textAlign: 'start',
+    decryptedTextContainer: {
+        textAlign: 'start'
     },
     decryptedText: {
         marginTop: '8px',
@@ -229,6 +248,11 @@ const styles = {
         backgroundColor: '#eff0f1',
         padding: '8px',
         paddingLeft: '16px'
+    },
+    decryptedMessage: {
+        padding: '16px',
+        display: 'inline-block',
+        overflowWrap: 'break-word'
     },
     snackbar: {
         vertical: 'bottom',

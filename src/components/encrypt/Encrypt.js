@@ -186,6 +186,7 @@ const styles = {
         marginBottom: '8px',
         backgroundColor: '#eff0f1',
         padding: '8px',
-        paddingLeft: '16px'
+        paddingLeft: '16px',
+        overflowWrap: 'break-word'
     }
 }
