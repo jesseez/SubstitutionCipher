@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { TextField, Button, Snackbar } from "@material-ui/core";
 import stringUtils from "../../utils/stringUtils";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default class Decrypt extends Component {
     constructor() {
@@ -114,7 +115,6 @@ export default class Decrypt extends Component {
     }
 
     onCopy() {
-        navigator.clipboard.writeText(this.translateMessage())
         this.setState({ snackbarOpen: true });
     }
 
@@ -124,6 +124,7 @@ export default class Decrypt extends Component {
         const decryptWidth = width.decrypt;
         const distinctLetters = [...new Set(this.state.encryptedText.toLowerCase())].filter(stringUtils.isLetter);
         const isSolved = distinctLetters.length > 0 && distinctLetters.length === Object.values(this.state.letterMap).length;
+        const decryptedText = isSolved ? this.translateMessage() : '';
 
         return (
             <div>
@@ -150,16 +151,17 @@ export default class Decrypt extends Component {
                             <div><span>Your decrypted message:</span></div>
                             <div style={styles.decryptedTextContainer}>
                                 <div style={styles.decryptedText}>
-                                    {this.translateMessage()}
+                                    {decryptedText}
                                 </div>
                             </div>
-                            <Button 
-                                variant='contained' 
-                                color='primary' 
-                                onClick={this.onCopy.bind(this)}
-                            >
-                                Copy
-                            </Button>
+                            <CopyToClipboard text={decryptedText} onCopy={this.onCopy.bind(this)}>
+                                <Button 
+                                    variant='contained' 
+                                    color='primary' 
+                                >
+                                    Copy
+                                </Button>
+                                </CopyToClipboard>
                         </div>
                     }
                     </div>

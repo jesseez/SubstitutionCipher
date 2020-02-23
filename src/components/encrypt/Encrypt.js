@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Snackbar } from "@material-ui/core";
 import encryptionUtils from "../../utils/encryptionUtils";
 import stringUtils from "../../utils/stringUtils";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default class Encrypt extends Component {
     shortLetterCount = 100;
@@ -18,7 +19,8 @@ export default class Encrypt extends Component {
             originalText: '',
             width: window.innerWidth,
             selectedEncryption: this.encryptionTypes.shift,
-            snackbarOpen: false
+            snackbarOpen: false,
+            encryptedText: ''
         };
     }
 
@@ -54,7 +56,6 @@ export default class Encrypt extends Component {
     }
 
     onCopy() {
-        navigator.clipboard.writeText(this.state.encryptedText)
         this.setState({ snackbarOpen: true });
     }
     
@@ -113,13 +114,14 @@ export default class Encrypt extends Component {
                                 <span>{this.state.encryptedText}</span>
                             </div>
                         </div>
-                        <Button 
-                            variant='contained' 
-                            color='primary' 
-                            onClick={this.onCopy.bind(this)}
-                        >
-                            Copy
-                        </Button>
+                        <CopyToClipboard text={this.state.encryptedText} onCopy={this.onCopy.bind(this)}>
+                            <Button 
+                                variant='contained' 
+                                color='primary' 
+                            >
+                                Copy
+                            </Button>
+                        </CopyToClipboard>
                     </div>
                 }
                 <Snackbar
