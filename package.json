@@ -4,13 +4,13 @@
   "private": true,
   "homepage": "https://jesseez.github.io/SubstitutionCipher/",
   "dependencies": {
-    "@material-ui/core": "^4.0.1",
-    "gh-pages": "^2.0.1",
-    "react": "^16.8.6",
+    "@material-ui/core": "^4.11.0",
+    "gh-pages": "^2.2.0",
+    "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,9 +36,9 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.6.0",
     "eslint-config-google": "^0.13.0",
-    "eslint-plugin-react": "^7.13.0"
+    "eslint-plugin-react": "^7.20.5"
   }
 }
